@@ -11,7 +11,7 @@ const visitaSchema = new mongoose.Schema({
 const ordenTrabajoSchema = new mongoose.Schema({
   vecino: { type: mongoose.Schema.Types.ObjectId, ref: 'Vecino', required: true },
   tipoServicio: { type: String, required: true },
-  estado: { type: String, default: 'pendiente' }, // pendiente, en curso, completada
+  estado: { type: String, default: 'pendiente' },
   visitas: [visitaSchema],
   numeroOrden: { type: Number, unique: true },
 });
