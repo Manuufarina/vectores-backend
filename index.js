@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const vecinosRouter = require('./routes/vecinos');
-const ordenesRouter = require('./routes/ordenes');
 
 dotenv.config();
 
@@ -19,7 +18,6 @@ mongoose.connect(process.env.MONGODB_URI, {
   .catch(err => console.error('Error al conectar a MongoDB:', err));
 
 app.use('/api/vecinos', vecinosRouter);
-app.use('/api/ordenes', ordenesRouter);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Servidor corriendo en puerto ${PORT}`));
