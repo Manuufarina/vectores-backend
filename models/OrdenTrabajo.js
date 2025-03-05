@@ -14,6 +14,7 @@ const ordenTrabajoSchema = new mongoose.Schema({
   estado: { type: String, default: 'pendiente' },
   visitas: [visitaSchema],
   numeroOrden: { type: Number, unique: true },
+  numeroRecibo: { type: String, default: '' }, // Nuevo campo
 });
 
 ordenTrabajoSchema.pre('save', async function(next) {
